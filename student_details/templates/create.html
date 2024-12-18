@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Details for {{data2.Name}} </title>
+    <link rel="stylesheet" href="{% static 'css/edit.css' %}">
+</head>
+<body>
+    <div class="top-heading">
+        <div class="top-heading-content">
+            <h1>~ Q/Py/J/Pro Spiders ~</h1>
+        </div>
+    </div>
+    <h2>Add Student</h2>
+    <div class="banner">
+        <div class="card">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="card-header">
+                    <div class="name form-group">
+                        <label for="">Name</label>
+                        <input type="text" name="Name" value="{{ data2.Name }}">
+                    </div>
+                    <div class="qualification form-group">
+                        <label for="">Qualification</label>
+                        <input type="text" name="Qualification" value="{{ data2.Qualification }}">
+                    </div>
+                    <div class="company form-group">
+                        <label for="">Company</label>
+                        <input type="text" name="Company" value="{{ data2.Company }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Age</label>
+                        <input type="text" name="Age" value="{{ data2.Age }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Address</label>
+                        <input type="text" name="Address" value="{{ data2.Address }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Gender</label>
+                        <input type="text" name="Gender" value="{{ data2.Gender }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Skills</label>
+                        <input type="text" name="Skills" value="{{ data2.Skills }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="">YOP</label>
+                        <input type="text" name="YOP" value="{{ data2.YOP }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="">DOB</label>
+                        <input type="date" name="DOB" value="{{ data2.DOB }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Mock_Rating</label>
+                        <input type="text" name="Mock_Rating" value="0" readonly>
+                    </div>
+                </div>
+                <div class="card-footer ">
+                    <button type="submit">Submit</button>
+                    <button>
+                        <a href="{% url 'main' %}">
+                            Back
+                        </a>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

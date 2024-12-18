@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Py Spiders</title>
+    <link rel="stylesheet" href="{% static 'css/spider.css' %}">
+</head>
+<body>
+    <div id="heading">
+        Welcome to ProSpiders
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfWI-RNsOBjo9I3YtWdEBPr6QEjsgZTF9rKA&s" alt="pyspiders">
+    </div>
+    <div class="body">
+        <div class="abutton">
+            <a href="{% url 'main' %}"><button>Main Page</button></a>
+        </div>
+        <div class="abutton">
+            <a href="{% url 'pyspiders' %}"><button>PySpiders</button></a>
+        </div>
+        <div class="abutton">
+            <a href="{% url 'qspiders' %}"><button>QSpiders</button></a>
+        </div>
+        <div class="abutton">
+            <a href="{% url 'jspiders' %}"><button>JSpiders</button></a>
+        </div>
+        <div class="abutton">
+            <a href="{% url 'prospiders' %}"><button>Prospiders</button></a>
+        </div>
+        <div class="abutton">
+            <a href="{% url 'create' %}"><button>Add Student</button></a>
+        </div>
+    </div>
+    <div class="top-heading">
+        <h2>Student Details: </h2>
+    </div>
+    <div class="banner">
+        {% for i in students %}
+        {% if i.Company == 'PROSPIDERS' %}
+        <div class="card">
+            <div class="card-header">
+                <div class="name">{{ i.Name }}</div>
+                <div class="qualification">{{ i.Qualification }}</div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6"><strong>Age:</strong> {{ i.Age }}</div>
+                    <div class="col-6"><strong>Address:</strong> {{ i.Address }}</div>
+                    <div class="col-6"><strong>Gender:</strong> {{ i.Gender }}</div>
+                    <div class="col-6"><strong>Skills:</strong> {{ i.Skills }}</div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <strong>Mock Rating: </strong> {{ i.Mock_Rating }}
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</body>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q/Py/J/Pro Spiders</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+</head>
+<body>
+    <div class="body">
+        <div class="abutton">
+            <a href="{% url 'main' %}"><button>Main Page</button></a>
+        </div>
+        <div class="abutton">
+            <a href="{% url 'pyspiders' %}"><button>PySpiders</button></a>
+        </div>
+        <div class="abutton">
+            <a href="{% url 'qspiders' %}"><button>QSpiders</button></a>
+        </div>
+        <div class="abutton">
+            <a href="{% url 'jspiders' %}"><button>JSpiders</button></a>
+        </div>
+        <div class="abutton">
+            <a href="{% url 'prospiders' %}"><button>Prospiders</button></a>
+        </div>
+        <div class="abutton">
+            <a href="{% url 'create' %}"><button>Add Student</button></a>
+        </div>
+    </div>
+    
+    <div class="top-heading">
+        <div class="top-heading-content">
+            <h1>~ Q/Py/J/Pro Spiders ~</h1>
+            <h3>Student Records (Click on the name to view complete details of the student)</h3>
+        </div>
+    </div>
+
+    <div class="butt">
+        <div class="search-button">
+            <form method="GET" action="">
+                <div class="sb">
+                    <input type="text" name="search" placeholder="Name/Skills/Company" style="padding: 10px;" autocomplete="off">
+                    <button type="submit" style="padding: 11px;">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="table_records">
+        <table style="width: 100%;">
+            <tr>
+                <th>S.No.</th>
+                <th>Name</th>
+                <th>Qualification</th>
+                <!-- <th>Gender</th> -->
+                <th>YOP</th>                    
+                <!-- <th>Age</th> -->
+                <th>Skills</th>
+                <!-- <th>D.O.B</th> -->
+                <!-- <th>Address</th> -->
+                <th>Mock Rating</th>
+                <th>Company</th>
+            </tr>
+            {% for i in students %}
+            <tr>
+                <td>{{ forloop.counter }}</td>
+                <td><a href="{% url 'student' i.id %}">
+                    {{i.Name}}
+                </a></td>
+                <td>{{i.Qualification}}</td>
+                <!-- <td>{{i.Gender}}</td> -->
+                <td>{{i.YOP}}</td>
+                <!-- <td>{{i.Age}}</td> -->
+                <td>{{i.Skills}}</td>
+                <!-- <td>{{i.DOB}}</td> -->
+                <!-- <td>{{i.Address}}</td> -->
+                <td>{{i.Mock_Rating}}</td>
+                <td>{{i.Company}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>   
+</body>
+</html>

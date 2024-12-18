@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{details1.name}}</title>
+    <link rel="stylesheet" href="{% static 'css/student.css' %}">
+</head>
+<body>
+    <div class="top-heading">
+        <div class="top-heading-content">
+            <h1>~ Q/Py/J/Pro Spiders ~</h1>
+            <h3>Student Name: {{ details1.Name}} | Department: {{ details1.Company }} </h3>
+        </div>
+    </div>
+    <div class="banner">
+        <div class="card">
+            <div class="card-header">
+                <div class="qualification">Qualification - {{ details1.Qualification }}</div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6"><strong>Age:</strong> {{ details1.Age }}</div>
+                    <div class="col-6"><strong>Address:</strong> {{ details1.Address }}</div>
+                    <div class="col-6"><strong>Gender:</strong> {{ details1.Gender }}</div>
+                    <div class="col-6"><strong>Skills:</strong> {{ details1.Skills }}</div>
+                    <div class="col-6"><strong>YOP: {{ details1.YOP }}</strong></div>
+                    <div class="col-6"><strong>DOB: {{ details1.DOB }}</strong></div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <strong>Mock Rating: </strong> {{ details1.Mock_Rating }}
+                <div class="buttons">
+                    <button type="submit">
+                        <a href="{% url 'edit' details1.id %}">
+                            Edit Details
+                        </a>
+                    </button>
+                    <button type="submit">
+                        <a href="{% url 'main' %}">
+                            Home Page
+                        </a>        
+                    </button>
+                </div>
+                <form action="" method = 'POST'>
+                    {% csrf_token %}
+                    <div class="buttons delete">
+                        <button type="submit">
+                            <strong>Delete</strong>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,123 @@
+/* General Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for the Form */
+.container {
+    background: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 50%;
+}
+
+/* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    color: #333;
+    margin: 0;
+}
+
+/* View Records Button Styling */
+.view-button {
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.view-button:hover {
+    background-color: #45a049;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Individual Form Group Styling */
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+label {
+    width: 30%;
+    font-weight: bold;
+}
+
+/* Input Fields, Select, and Textarea Styling */
+input, select, textarea {
+    width: 50%;
+    /* padding: 5px; */
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    height: 2rem;
+    font-size: 1rem;
+}
+
+textarea {
+    resize: none;
+    height: 80px;
+}
+
+/* Buttons Styling */
+button {
+    width: 100%;  /* Make both buttons the same width */
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+}
+
+/* Submit Button Styling */
+button[type="submit"] {
+    background-color: #4CAF50; /* Green color */
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Reset Button Styling */
+button[type="reset"] {
+    background-color: #f44336; /* Red color */
+    color: white;
+}
+
+button[type="reset"]:hover {
+    background-color: #e53935;
+}
+
+/* Form Buttons container (for reset and submit buttons) */
+.form-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.form-buttons button {
+    width: 48%;  /* Adjust width of buttons to be the same */
+    padding: 12px;
+    font-size: 16px;
+}
