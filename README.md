@@ -1,6 +1,7 @@
 # Student Management System
 
 **Features**
+
 **1) Home Page**
 -  Displays a list of all students in the institute.
 -  Includes a search bar to filter students by name, company, or skills.
@@ -9,7 +10,8 @@
     -  PySpiders
     -  JSpiders
     -  ProSpiders
--  Contains an Add Student button to navigate to the form for adding a new student.
+-  Contains an Add Student button to navigate to the form for adding a new student. <br>
+
 **2) Department Pages**
 -  Individual pages for each department, displaying students associated with that department.
 
